@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Escalate to sudo
+if [ $EUID != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+fi
+
 # Install Homebrew
 if ! brew --version > /dev/null 2>&1; then
   echo "Installing brew"
