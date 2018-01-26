@@ -3,7 +3,7 @@
 # Install Homebrew
 if ! brew --version > /dev/null 2>&1; then
   echo "Installing brew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
 else
   echo "homebrew already installed"
 fi
