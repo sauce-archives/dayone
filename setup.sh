@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 # Escalate to sudo
-if [ $EUID != 0 ]; then
-    sudo "$0" "$@"
-    exit $?
-fi
+echo "sudo is needed for Sauce setup."
+sudo echo "Thank you"
 
 # Install Homebrew
 if ! brew --version > /dev/null 2>&1; then
