@@ -21,7 +21,7 @@ add_ssh_key_to_github_account() {
   echo "SauceLabs dedicated GitHub username:"
   read USER
   RSA_KEY=$(cat ${GITHUB_SSH_KEY}.pub)
-  curl -d -u $USER "{\"title\": \"SauceLabs\", \"key\": \"$RSA_KEY\"}" -X POST https://api.github.com/user/keys
+  curl -u $USER -d "{\"title\": \"SauceLabs\", \"key\": \"$RSA_KEY\"}" -X POST https://api.github.com/user/keys
 }
 
 # Escalate to sudo
